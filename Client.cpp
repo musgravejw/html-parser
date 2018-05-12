@@ -1,17 +1,9 @@
-#include <fstream>
-#include <iostream>
+#include "./src/Parser.cpp"
 
 int main() {
-    std::fstream in;
-    in.open("tests/sample.html");
-    std::string token;
+    Parser *parser = new Parser();
 
-    while (in >> token && !in.eof()) {
-        std::cout << token << "\n";
-    }
-
-    in.close();
-    in.clear();
+    parser->start();
 
     return 0;
 }
